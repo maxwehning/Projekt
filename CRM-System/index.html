@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM-System Autovermietung</title>
+    <style>
+        /* Ihr CSS bleibt unverändert */
+    </style>
+</head>
+<body>
+<header>
+    <h1>Willkommen im CRM-System</h1>
+</header>
+<nav>
+    <a href="#">Startseite</a>
+    <a href="#">Anmelden</a>
+</nav>
+<section>
+    <h2>Bitte loggen Sie sich mit Ihren Mitarbeiterdaten ein</h2>
+    <form action="/projektWINFO/MALogin" method="POST"> <!-- Ändern der Action auf den Pfad Ihres Servlets -->
+        <label for="username">Benutzername:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Passwort:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Anmelden">
+    </form>
+</section>
+
+</section>
+<footer>
+    <p>&copy; 2024 Autovermietung. Alle Rechte vorbehalten.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kundenstammdaten anzeigen - SAP-Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f6f6f6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .btn {
+            background-color: #005a8d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #003354;
+        }
+
+        .customer-details {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .customer-details h2 {
+            margin-top: 0;
+            color: #005a8d;
+        }
+
+        .customer-details strong {
+            color: #333;
+        }
+
+        .customer-details span {
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Kundenstammdaten anzeigen</h2>
+    <div class="input-group">
+        <label for="kundennummer">Kundennummer:</label>
+        <input type="text" id="kundennummer" placeholder="Kundennummer eingeben">
+    </div>
+    <div class="input-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Name eingeben">
+    </div>
+    <div class="input-group">
+        <label for="adresse">Adresse:</label>
+        <input type="text" id="adresse" placeholder="Adresse eingeben">
+    </div>
+    <div class="input-group">
+        <label for="telefon">Telefon:</label>
+        <input type="text" id="telefon" placeholder="Telefonnummer eingeben">
+    </div>
+    <div class="input-group">
+        <label for="land">Land:</label>
+        <select id="land">
+            <option value="">Bitte auswählen</option>
+            <option value="DE">Deutschland</option>
+            <option value="AT">Österreich</option>
+            <option value="CH">Schweiz</option>
+        </select>
+    </div>
+    <button class="btn" onclick="sucheKunde()">Kunde suchen</button>
+</div>
+
+<div class="customer-details" id="customerDetails" style="display: none;">
+    <h2>Kundendetails</h2>
+    <div><strong>Kundennummer:</strong> <span id="customerNum"></span></div>
+    <div><strong>Name:</strong> <span id="customerName"></span></div>
+    <div><strong>Adresse:</strong> <span id="customerAddress"></span></div>
+    <div><strong>Telefon:</strong> <span id="customerPhone"></span></div>
+    <div><strong>Land:</strong> <span id="customerCountry"></span></div>
+</div>
+
+<script>
+    function sucheKunde() {
+        var kundennummer = document.getElementById('kundennummer').value;
+        var name = document.getElementById('name').value;
+        var adresse = document.getElementById('adresse').value;
+        var telefon = document.getElementById('telefon').value;
+        var land = document.getElementById('land').value;
+
+        // Hier könntest du die Daten verarbeiten, z.B. an einen Server senden oder lokal speichern
+        // Für dieses Beispiel geben wir die Daten einfach in der Konsole aus
+        console.log("Kundennummer: " + kundennummer);
+        console.log("Name: " + name);
+        console.log("Adresse: " + adresse);
+        console.log("Telefon: " + telefon);
+        console.log("Land: " + land);
+
+        // Hier füllen wir die Kundendetails auf der Seite
+        document.getElementById('customerNum').innerText = kundennummer;
+        document.getElementById('customerName').innerText = name;
+        document.getElementById('customerAddress').innerText = adresse;
+        document.getElementById('customerPhone').innerText = telefon;
+        document.getElementById('customerCountry').innerText = land;
+
+        // Anzeigen der Kundendetails
+        document.getElementById('customerDetails').style.display = 'block';
+    }
+</script>
+
+</body>
+
+</html>
